@@ -27,7 +27,7 @@ namespace esphome
         if (sensor->get_index().has_value())
         {
           auto index = *sensor->get_index();
-          if (index > found_sensors_.size())
+          if (index >= found_sensors_.size())
           {
             ESP_LOGW(TAG, "Index %d higher than the number of sensors (%d)", index, found_sensors_.size());
             status_set_error();
